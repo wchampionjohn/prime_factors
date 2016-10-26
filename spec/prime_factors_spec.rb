@@ -11,6 +11,7 @@ describe 'PrimeFactors' do
     [4, [2, 2]],
     [6, [2, 3]],
     [8, [2, 2, 2]],
+    [9, [3, 3]],
   ].each do |num, expression|
     it "should return #{expression.to_s} if input of #{num.to_s}" do
       expect(PrimeFactor.of(num)).to eq expression
