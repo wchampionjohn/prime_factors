@@ -7,13 +7,12 @@ module PrimeFactor
 
     return factors if num == 1
 
-    if num % 2 == 0
+    while num % 2 == 0
       factors << 2
       num/=2
     end
 
     factors << num if Prime.prime? num
-
     factors
   end
 end
