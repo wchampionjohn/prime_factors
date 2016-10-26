@@ -7,12 +7,18 @@ module PrimeFactor
 
     return factors if num == 1
 
-    while num % 2 == 0
-      factors << 2
-      num/=2
+    while num != min_prime(num)
+      factors << min_prime(num)
+      num/=min_prime(num)
     end
 
-    factors << num if Prime.prime? num
-    factors
+    factors << min_prime(num)
+  end
+
+
+  def self.min_prime num
+    Prime.each do |prime|
+      return prime if num % prime == 0
+    end
   end
 end
